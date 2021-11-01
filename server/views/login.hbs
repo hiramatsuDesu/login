@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="card mt-5 text-light bg-dark shadow-lg">
+        <div class="card-header">
+            <h1 class="card-title">Mis albumes 2021</h1>
+        </div>
+        <div class="card-header">
+            <h2 class="card-title">Formulario de Login y Registración</h2>
+        </div>
+        <div class="card text-primary shadow-lg">
+            <div class="card-body">
+                {{#if error}} 
+                    <div class="alert alert-danger">
+                        {{error}}
+                    </div>
+                {{/if}}
+                <div class="card-title col-md-6 col-lg-6">
+                    <h3>Logearse</h3>
+                </div>
+                <div class="formLog col-md-6 col-lg-6">
+                    <form action="/users/login" method="POST" autocomplete="off">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="logemail" 
+                            placeholder="E-mail" required minlength="5"
+                            value="{{user.logemail}}" autocomplete="off">
+                            <input class="form-control" type="password" name="logpassword" 
+                            placeholder="Clave" required minlength="8" autocomplete="off">
+                        </div>
+                        <div class="btnLog">
+                            <input class="btn btn-success btn-lg" type="submit" value="Login">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="card-title col-md-6 col-lg-6">
+                    <h3>Registrarse</h3>
+                </div>
+                <div class="formReg col-md-6 col-lg-6">
+                    <form action="/users/register" method="POST" autocomplete="off">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="email" placeholder="E-mail" required autocomplete="off" value={{user.email}}>
+                            <input class="form-control" type="text" name="username" placeholder="Usuario" required autocomplete="off" value={{user.username}}>
+                            <input class="form-control" type="password" name="password" placeholder="Clave" required autocomplete="off">
+                            <input class="form-control" type="password" name="passwordconf" placeholder="Confirmar clave" required autocomplete="off">
+                        </div>
+                        <div class="btnReg">
+                            <input class="btn btn-success btn-lg" type="submit" value="Registrarse">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
